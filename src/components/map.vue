@@ -3,17 +3,17 @@
         <div>
             <h2>Search and add a pin</h2>
             <label>
-            <gmap-autocomplete
-              @place_changed="setPlace">
-            </gmap-autocomplete>
-            <button @click="addMarker">Add</button>
-          </label>
+                <gmap-autocomplete
+                  @place_changed="setPlace">
+                </gmap-autocomplete>
+                <button @click="addMarker">Add</button>
+              </label>
             <br/>
     
         </div>
         <br>
-        <gmap-map :center="center" :zoom="12" style="width:100%;  height: 400px;">
-            <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" @click="center=m.position"></gmap-marker>
+        <gmap-map :center="center" :zoom="6" style="width:100%;  height: 400px;">
+            <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" @click="infoWindow(m)"></gmap-marker>
         </gmap-map>
     </div>
 </template>
@@ -37,6 +37,10 @@ export default {
     },
 
     methods: {
+        infoWindow(m) {
+            console.log(m)
+            alert('Nairobi county </br> 100 cases')
+        },
         // receives a place object via the autocomplete component
         setPlace(place) {
             this.currentPlace = place;
