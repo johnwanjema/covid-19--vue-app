@@ -3,16 +3,16 @@
         <div>
             <h2>Search and add a pin</h2>
             <label>
-                <gmap-autocomplete
-                  @place_changed="setPlace">
-                </gmap-autocomplete>
-                <button @click="addMarker">Add</button>
-              </label>
+                            <gmap-autocomplete
+                              @place_changed="setPlace">
+                            </gmap-autocomplete>
+                            <button @click="addMarker">Add</button>
+                          </label>
             <br/>
     
         </div>
         <br>
-        <gmap-map :center="center" :zoom="6" style="width:100%;  height: 400px;">
+        <gmap-map :center="center" :zoom="6.8" style="width:100%;  height: 800px;">
             <gmap-marker :key="index" v-for="(m, index) in markers" :position="m.position" @click="infoWindow(m)"></gmap-marker>
         </gmap-map>
     </div>
@@ -25,7 +25,10 @@ export default {
         return {
             // default to Montreal to keep it simple
             // change this to whatever makes sense
-            center: { lat: 45.508, lng: -73.587 },
+            center: {
+                lat: 0.355636,
+                lng: 37.5833061
+            },
             markers: [],
             places: [],
             currentPlace: null
