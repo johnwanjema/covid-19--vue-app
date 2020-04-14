@@ -41,7 +41,8 @@ export default {
 
     methods: {
         infoWindow(m) {
-            console.log(m)
+            console.log(m);
+            console.log(this.places);
             alert('Nairobi county </br> 100 cases')
         },
         // receives a place object via the autocomplete component
@@ -54,7 +55,7 @@ export default {
                     lat: this.currentPlace.geometry.location.lat(),
                     lng: this.currentPlace.geometry.location.lng()
                 };
-                this.markers.push({ position: marker });
+                this.markers.push({ position: marker,"place":this.currentPlace });
                 this.places.push(this.currentPlace);
                 // this.center = marker;
                 this.currentPlace = null;
