@@ -56,7 +56,7 @@ export default {
                 };
                 this.markers.push({ position: marker });
                 this.places.push(this.currentPlace);
-                this.center = marker;
+                // this.center = marker;
                 this.currentPlace = null;
             }
         },
