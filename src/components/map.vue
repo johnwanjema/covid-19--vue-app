@@ -56,7 +56,7 @@ export default {
                     lat: this.currentPlace.geometry.location.lat(),
                     lng: this.currentPlace.geometry.location.lng()
                 };
-                this.markers.push({ position: marker, "place": this.currentPlace });
+                this.markers.push({ position: marker, "place": this.currentPlace.name });
                 this.places.push(this.currentPlace);
                 // this.center = marker;
                 this.currentPlace = null;
